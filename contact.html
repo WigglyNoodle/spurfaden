@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Spurfaden | Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=JetBrains+Mono:wght@100..900&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-variant": "#353437",
+            "surface-dim": "#131315",
+            "on-secondary-container": "#c2b491",
+            "surface-tint": "#ecbd9e",
+            "on-secondary-fixed": "#221b04",
+            "on-error": "#690005",
+            "error": "#ffb4ab",
+            "inverse-surface": "#e4e2e4",
+            "error-container": "#93000a",
+            "on-surface": "#e4e2e4",
+            "primary-fixed": "#ffdcc5",
+            "secondary": "#d4c5a1",
+            "tertiary": "#bbcbb3",
+            "on-primary": "#462a14",
+            "tertiary-fixed": "#d7e7cf",
+            "inverse-primary": "#7a573d",
+            "on-tertiary-fixed": "#121f10",
+            "on-primary-container": "#452812",
+            "background": "#131315",
+            "on-tertiary-container": "#253222",
+            "on-error-container": "#ffdad6",
+            "on-primary-fixed": "#2e1503",
+            "on-background": "#e4e2e4",
+            "surface": "#131315",
+            "outline-variant": "#50453d",
+            "inverse-on-surface": "#303032",
+            "surface-container-high": "#2a2a2c",
+            "on-tertiary-fixed-variant": "#3c4b38",
+            "surface-container-low": "#1b1b1d",
+            "secondary-fixed-dim": "#d4c5a1",
+            "primary": "#ecbd9e",
+            "tertiary-fixed-dim": "#bbcbb3",
+            "surface-container-lowest": "#0e0e10",
+            "secondary-container": "#50462a",
+            "on-surface-variant": "#d4c3ba",
+            "surface-bright": "#39393b",
+            "primary-fixed-dim": "#ecbd9e",
+            "on-tertiary": "#263423",
+            "secondary-fixed": "#f1e1bc",
+            "surface-container": "#1f1f21",
+            "surface-container-highest": "#353437",
+            "on-secondary-fixed-variant": "#50462a",
+            "on-secondary": "#383016",
+            "primary-container": "#b88e71",
+            "outline": "#9d8e85",
+            "on-primary-fixed-variant": "#604028",
+            "tertiary-container": "#8b9b85"
+          },
+          borderRadius: {
+            DEFAULT: "0.25rem",
+            lg: "0.5rem",
+            xl: "0.75rem",
+            full: "9999px"
+          },
+          spacing: {
+            "margin-desktop": "40px",
+            "stack-md": "16px",
+            "stack-lg": "32px",
+            "margin-mobile": "20px",
+            "stack-sm": "8px",
+            "unit": "4px",
+            "gutter": "16px"
+          },
+          fontFamily: {
+            "display-lg": ["Hanken Grotesk"],
+            "headline-lg": ["Hanken Grotesk"],
+            "body-lg": ["Hanken Grotesk"],
+            "label-sm": ["JetBrains Mono"],
+            "headline-md": ["Hanken Grotesk"],
+            "headline-lg-mobile": ["Hanken Grotesk"],
+            "body-md": ["Hanken Grotesk"],
+            "label-md": ["JetBrains Mono"]
+          },
+          fontSize: {
+            "display-lg": ["40px", { lineHeight: "48px", letterSpacing: "-0.02em", fontWeight: "700" }],
+            "headline-lg": ["32px", { lineHeight: "40px", letterSpacing: "-0.01em", fontWeight: "600" }],
+            "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
+            "label-sm": ["12px", { lineHeight: "16px", letterSpacing: "0.08em", fontWeight: "500" }],
+            "headline-md": ["24px", { lineHeight: "32px", fontWeight: "600" }],
+            "headline-lg-mobile": ["28px", { lineHeight: "36px", fontWeight: "600" }],
+            "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
+            "label-md": ["14px", { lineHeight: "20px", letterSpacing: "0.05em", fontWeight: "500" }]
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body { background-color: #131315; overflow: hidden; }
+    .thread-line { position: absolute; width: 100%; height: 100%; pointer-events: none; z-index: 1; }
+    .noise-overlay {
+      position: fixed;
+      inset: 0;
+      background-image: url("https://www.transparenttextures.com/patterns/brushed-alum.png");
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: 50;
+    }
+    .glass-panel { backdrop-filter: blur(20px); border: 1px solid rgba(212, 197, 161, 0.1); }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">
+  <div class="noise-overlay"></div>
+  <canvas class="thread-line opacity-30" id="threadCanvas"></canvas>
+
+  <header class="fixed top-0 w-full z-40 bg-background/80 backdrop-blur-xl border-b border-outline-variant/10">
+    <div class="flex justify-between items-center px-margin-desktop py-4 max-w-7xl mx-auto">
+      <a class="font-display-lg text-display-lg font-bold text-primary tracking-tight" href="index.html">Spurfaden</a>
+      <div class="hidden md:block"><span class="font-label-md text-label-md text-primary/60">EST. 2026</span></div>
+    </div>
+  </header>
+
+  <main class="relative z-10 min-h-screen flex items-center justify-center px-margin-mobile md:px-margin-desktop pt-24 pb-32">
+    <section class="w-full max-w-2xl glass-panel bg-surface-container/60 rounded-xl p-8 md:p-12 text-center space-y-stack-md">
+      <p class="font-label-md text-label-md text-primary tracking-[0.2em]">CONTACT</p>
+      <h1 class="font-headline-lg text-headline-lg text-on-surface">Stay in the thread.</h1>
+      <p class="font-body-md text-body-md text-on-surface-variant opacity-90">
+        This contact page is ready for your live details. Add your preferred email, socials, or a form endpoint when you’re ready.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-gutter justify-center pt-stack-sm">
+        <a class="bg-primary-container text-on-primary-container font-label-md text-label-md py-3 px-6 rounded-xl hover:scale-[0.98] transition-all" href="index.html">Back to Home</a>
+        <a class="text-on-surface-variant hover:text-primary font-label-md text-label-md py-3 px-6 rounded-xl border border-outline-variant/30" href="legalcode.html">legal/privacy</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fixed bottom-0 w-full py-stack-md bg-surface-container-lowest/50 backdrop-blur-sm border-t border-outline-variant/10 z-40">
+    <div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop gap-stack-sm max-w-7xl mx-auto">
+      <span class="font-label-sm text-label-sm text-on-surface-variant">© 2024 Spurfaden. Mathematically Maximally Random.</span>
+      <div class="flex gap-gutter">
+        <a class="font-label-sm text-label-sm text-primary transition-colors duration-300" href="contact.html">Contact</a>
+        <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors duration-300" href="legalcode.html">legal/privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById('threadCanvas');
+    const ctx = canvas.getContext('2d');
+    let width, height, points = [];
+    const numPoints = 120;
+    let mouseX = 0, mouseY = 0;
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+      points = Array.from({ length: numPoints }, (_, i) => ({
+        x: (width / numPoints) * i,
+        y: height / 2,
+        angle: Math.random() * Math.PI * 2,
+        speed: 0.01 + Math.random() * 0.02
+      }));
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.beginPath();
+      ctx.moveTo(0, height / 2);
+      ctx.strokeStyle = '#ecbd9e';
+      ctx.lineWidth = 1;
+      ctx.lineCap = 'round';
+      ctx.lineJoin = 'round';
+
+      for (const p of points) {
+        p.angle += p.speed;
+        const offset = Math.sin(p.angle) * 80;
+        const dx = p.x - mouseX;
+        const dy = (p.y + offset) - mouseY;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        const influence = Math.max(0, (200 - dist) / 200);
+        const finalY = (height / 2) + offset + (influence * (mouseY - height / 2));
+        ctx.lineTo(p.x, finalY);
+      }
+
+      ctx.stroke();
+      ctx.shadowBlur = 15;
+      ctx.shadowColor = '#ecbd9e';
+      ctx.stroke();
+      ctx.shadowBlur = 0;
+      requestAnimationFrame(draw);
+    }
+
+    window.addEventListener('mousemove', (e) => { mouseX = e.clientX; mouseY = e.clientY; });
+    window.addEventListener('resize', resize);
+    resize();
+    draw();
+  </script>
+</body>
+</html>
