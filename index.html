@@ -133,7 +133,7 @@
         }
     </style>
 </head>
-<body class="bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">
+<body class="min-h-screen flex flex-col bg-background text-on-background font-body-md selection:bg-primary selection:text-on-primary">
 <div class="noise-overlay"></div>
 <canvas class="thread-line opacity-30" id="threadCanvas" width="1280" height="1025"></canvas>
 <header class="fixed top-0 w-full z-40 bg-background/80 backdrop-blur-xl border-b border-outline-variant/10">
@@ -142,7 +142,7 @@
 <div class="hidden md:block"><span class="font-label-md text-label-md text-primary/60">EST. 2026</span></div>
 </div>
 </header>
-<main class="relative z-10 min-h-screen flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop pt-24 pb-32">
+<main class="relative z-10 flex-1 flex flex-col items-center justify-center px-margin-mobile md:px-margin-desktop pt-24 pb-20">
 <div class="w-full max-w-3xl text-center space-y-stack-lg">
 <div class="relative inline-block mb-stack-lg group">
 <div class="absolute -inset-8 bg-primary/5 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
@@ -157,25 +157,11 @@
                     The trace of every song, woven into a singular, authentic sequence.
                 </p>
 </div>
-<div class="pt-stack-lg max-w-md mx-auto w-full">
-<form class="flex flex-col md:flex-row gap-gutter">
-<div class="relative flex-1 group">
-<input class="w-full glass-panel bg-surface-container-low px-6 py-4 rounded-xl text-on-surface placeholder:text-on-surface-variant/40 focus:ring-2 focus:ring-primary/50 focus:border-primary outline-no[...] 
-<div class="absolute inset-0 rounded-xl bg-primary/5 pointer-events-none opacity-0 group-focus-within:opacity-100 transition-opacity"></div>
-</div>
-<button class="bg-primary-container text-on-primary-container font-label-md text-label-md py-4 px-8 rounded-xl hover:scale-[0.98] active:opacity-80 transition-all shadow-lg shadow-primary/10 whitespac[...] 
-                        NOTIFY ME
-                    </button>
-</form>
-<p class="mt-4 font-label-sm text-label-sm text-on-surface-variant/40">
-                    Be the first to experience the trace.
-                </p>
-</div>
 </div>
 </main>
-<footer class="fixed bottom-0 w-full py-stack-md bg-surface-container-lowest/50 backdrop-blur-sm border-t border-outline-variant/10 z-40">
-<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop gap-stack-sm max-w-7xl mx-auto">
-<span class="font-label-sm text-label-sm text-on-surface-variant">
+<footer class="w-full py-stack-lg border-t border-outline-variant/10 bg-surface-container-lowest">
+<div class="flex flex-col md:flex-row justify-between items-center px-margin-mobile md:px-margin-desktop gap-stack-md max-w-7xl mx-auto">
+<span class="font-label-sm text-label-sm text-on-surface-variant opacity-80">
                 © 2026 Spurfaden. Mathematically Maximally Random.
             </span>
 <div class="flex gap-gutter">
